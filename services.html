@@ -138,16 +138,20 @@
             <a href="portfolio.html?filter=brand_ad" class="btn btn-ghost" id="adsPortfolioBtn">Watch Our Ads</a>
           </div>
         </div>
-        <div class="service-detail-visual service-detail-visual--video" id="service2Visual">
-          <video
-            src="Balwan Bakra.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="none"
-            aria-label="Sample brand reel — Balwan Bakra"
-          ></video>
+        <div class="service-detail-visual service-detail-visual--video" id="service2Visual" style="aspect-ratio: 9/16; background: #000;">
+          <div class="yt-thumb" style="width: 100%; height: 100%;">
+            <div class="yt-thumb-placeholder" 
+              data-src="https://www.youtube.com/embed/Iz6t7rMu3xg?si=Unpil3g3T-kwqWg-" 
+              role="button" tabindex="0" aria-label="Play Balwan Bakra"
+              style="width: 100%; height: 100%; position: relative; cursor: pointer;">
+              <img src="https://img.youtube.com/vi/Iz6t7rMu3xg/hqdefault.jpg" alt="Balwan Bakra video ad" style="width:100%; height:100%; object-fit:cover;">
+              <div class="portfolio-thumb-overlay" style="opacity:1; background:rgba(0,0,0,0.3); pointer-events:none;">
+                <div class="portfolio-thumb-btn" style="pointer-events:none;">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
