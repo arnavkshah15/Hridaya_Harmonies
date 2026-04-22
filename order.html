@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Order Your Custom Creation | Hridaya Harmonies</title>
-  <meta name="description" content="Order a custom AI-generated song, devotional composition, or brand video ad from Hridaya Harmonies. Fill in your details and we'll craft something unforgettable for you." />
+  <title>Order Custom Music & Brand Ads | Hridaya Harmonies</title>
+  <meta name="description" content="Order custom AI-generated music or high-impact brand video ads from Hridaya Harmonies. Share your vision and we'll craft something unforgettable." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo_hridaya.png" />
+  <link rel="apple-touch-icon" href="logo_hridaya.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -173,17 +177,13 @@
                 <input class="form-input" type="text" id="references" name="references" placeholder="Paste YouTube or social media links you love the vibe of…" />
               </div>
 
-              <!-- Budget -->
+              <!-- Delivery Type -->
               <div class="form-group">
-                <label class="form-label" for="budget">Approximate Budget</label>
-                <select class="form-select" id="budget" name="budget">
-                  <option value="" disabled selected>Select range…</option>
-                  <option>Under ₹5,000</option>
-                  <option>₹5,000 – ₹10,000</option>
-                  <option>₹10,000 – ₹25,000</option>
-                  <option>₹25,000 – ₹50,000</option>
-                  <option>₹50,000+</option>
-                  <option>Flexible / Let's Discuss</option>
+                <label class="form-label" for="deliveryType">Delivery Type</label>
+                <select class="form-select" id="deliveryType" name="delivery_type" required>
+                  <option value="" disabled selected>Select delivery option…</option>
+                  <option value="standard">Standard Delivery (2-3 Days)</option>
+                  <option value="express">Express Delivery (1 Day) [+₹500]</option>
                 </select>
               </div>
 

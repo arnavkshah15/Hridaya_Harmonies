@@ -211,31 +211,7 @@ reelCards.forEach(card => {
   });
 });
 
-/* ── TESTIMONIAL CAROUSEL ────────────────────────── */
-const dots = document.querySelectorAll('.carousel-dot');
-const testimCards = document.querySelectorAll('.testimonial-card');
-let currentDot = 0;
-let carouselTimer;
 
-function goToDot(i) {
-  dots[currentDot]?.classList.remove('active');
-  currentDot = i;
-  dots[currentDot]?.classList.add('active');
-  // On small screens scroll to the card
-  if (window.innerWidth < 900 && testimCards[i]) {
-    testimCards[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-  }
-}
-
-dots.forEach((dot, i) => {
-  dot.addEventListener('click', () => { goToDot(i); resetTimer(); });
-});
-
-function resetTimer() {
-  clearInterval(carouselTimer);
-  carouselTimer = setInterval(() => { goToDot((currentDot + 1) % dots.length); }, 4500);
-}
-if (dots.length) resetTimer();
 
 /* ── FOOTER YEAR ─────────────────────────────────── */
 const footerYear = document.getElementById('footerYear');

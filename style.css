@@ -1513,7 +1513,10 @@ input, select, textarea {
   .nav-links {
     display: none;
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
     background: rgba(13,15,26,0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
@@ -1530,7 +1533,6 @@ input, select, textarea {
   .form-grid { grid-template-columns: 1fr; }
   .form-group.full-col { grid-column: unset; }
   .cta-inner { flex-direction: column; text-align: center; }
-  .order-sidebar { display: none; }
   .process-connector { display: none; }
   .process-grid { flex-direction: column; }
 }
