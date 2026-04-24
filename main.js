@@ -124,6 +124,24 @@ if (orderForm) {
 
     const formData = new FormData(orderForm);
 
+    // ── Build WhatsApp greeting link and attach to email ─────────────────
+    const customerName  = (orderForm.querySelector('#fullName')?.value || '').trim();
+    const customerPhone = (orderForm.querySelector('#phone')?.value   || '').trim();
+    if (customerPhone) {
+      const cleanPhone = customerPhone.replace(/[^\d+]/g, '');
+      const firstName  = customerName.split(' ')[0] || 'there';
+      const greeting   = encodeURIComponent(
+        `Hi ${firstName}! 🎵 We have received your order at Hridaya Harmonies. ` +
+        `Is there anything you would want us to know before we start preparing your order?\n\n` +
+        `Also, please note that payment is required before we begin work. ` +
+        `Kindly confirm if you would like to proceed with the payment. 🙏`
+      );
+      const waLink = `https://wa.me/${cleanPhone}?text=${greeting}`;
+      // This appears as a clickable link in the Web3Forms email you receive
+      formData.append('whatsapp_greeting_link', waLink);
+    }
+    // ─────────────────────────────────────────────────────────────────────
+
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
