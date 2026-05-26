@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Order Custom Music & Brand Ads | Hridaya Harmonies</title>
-  <meta name="description" content="Order custom AI-generated music or high-impact brand video ads from Hridaya Harmonies. Share your vision and we'll craft something unforgettable." />
+  <!-- <title>Order Custom Music & Brand Ads | Hridaya Harmonies</title> -->
+  <title>Order Custom Music | Hridaya Harmonies</title>
+  <!-- <meta name="description" content="Order custom AI-generated music or high-impact brand video ads from Hridaya Harmonies. Share your vision and we'll craft something unforgettable." /> -->
+  <meta name="description" content="Order custom AI-generated music for special occasions from Hridaya Harmonies. Share your vision and we'll craft something unforgettable with 1-day express delivery." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../logo_hridaya.png" />
@@ -20,7 +22,7 @@
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-inner container">
-      <a href="/" class="nav-logo" aria-label="Hridaya Harmonies Home">
+      <a href="../index.html" class="nav-logo" aria-label="Hridaya Harmonies Home">
         <img src="../logo_hridaya.png" alt="Hridaya Harmonies logo mark" class="nav-logo-img" />
         <span class="nav-logo-text">Hridaya<span class="accent"> Harmonies</span></span>
       </a>
@@ -28,11 +30,11 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="/" class="nav-link">Home</a></li>
-        <li><a href="/services/" class="nav-link">Services</a></li>
-        <li><a href="/portfolio/" class="nav-link">Portfolio</a></li>
-        <li><a href="/devotional/" class="nav-link">Devotional</a></li>
-        <li><a href="/order/" class="nav-link nav-cta active">Order Now</a></li>
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../services/index.html" class="nav-link">Services</a></li>
+        <li><a href="../portfolio/index.html" class="nav-link">Portfolio</a></li>
+        <li><a href="../devotional/index.html" class="nav-link">Devotional</a></li>
+        <li><a href="../order/index.html" class="nav-link nav-cta active">Order Now</a></li>
       </ul>
     </div>
   </nav>
@@ -42,7 +44,8 @@
     <div class="container">
       <span class="section-tag">Start Your Journey</span>
       <h1>Order Your <span class="gradient-text">Custom Creation</span></h1>
-      <p>Tell us your story, your vision, your emotion — and we'll craft a piece of music or video that lives forever in hearts.</p>
+      <!-- <p>Tell us your story, your vision, your emotion — and we'll craft a piece of music or video that lives forever in hearts.</p> -->
+      <p>Tell us your story, your vision, your emotion — and we'll craft a piece of music that lives forever in hearts.</p>
     </div>
   </header>
 
@@ -99,9 +102,11 @@
                     <option value="your_voice_song">Your Voice Song</option>
                     <option value="other_personal">Other Personal Song</option>
                   </optgroup>
+                  <!-- Commented out Brand & Business Services
                   <optgroup label="Brand & Business">
                     <option value="brand_video_ad">AI Brand Video Ad</option>
                   </optgroup>
+                  -->
                 </select>
               </div>
 
@@ -149,10 +154,10 @@
                 </select>
               </div>
 
-              <!-- Couple / Brand Names -->
+              <!-- Couple / Special Occasion Names -->
               <div class="form-group full-col">
-                <label class="form-label" for="names">Names / Brand Name <span class="required-star">*</span></label>
-                <input class="form-input" type="text" id="names" name="names" placeholder="e.g. Priya &amp; Rohan / NutriGrow Brands" required />
+                <label class="form-label" for="names">Names <span class="required-star">*</span></label>
+                <input class="form-input" type="text" id="names" name="names" placeholder="e.g. Priya &amp; Rohan" required />
               </div>
 
               <!-- Story / Brief -->
@@ -164,7 +169,7 @@
                   name="message"
                   rows="6"
                   maxlength="1000"
-                  placeholder="Tell us your story, key memories, emotions you want to capture, specific references, inside jokes, brand values — the more you share, the more personal we can make it…"
+                  placeholder="Tell us your story, key memories, emotions you want to capture, specific references, inside jokes — the more you share, the more personal we can make it…"
                   required
                 ></textarea>
                 <span class="form-char-count" id="charCount">0/1000 characters</span>
@@ -172,7 +177,7 @@
 
               <!-- Reference Links -->
               <div class="form-group full-col">
-                <label class="form-label" for="references">Song / Video References (URLs)</label>
+                <label class="form-label" for="references">Song References (URLs)</label>
                 <input class="form-input" type="text" id="references" name="references" placeholder="Paste YouTube or social media links you love the vibe of…" />
               </div>
 
@@ -180,9 +185,7 @@
               <div class="form-group">
                 <label class="form-label" for="deliveryType">Delivery Type</label>
                 <select class="form-select" id="deliveryType" name="delivery_type" required>
-                  <option value="" disabled selected>Select delivery option…</option>
-                  <option value="standard">Standard Delivery (2-3 Days)</option>
-                  <option value="express">Express Delivery (1 Day) [+₹500]</option>
+                  <option value="express" selected>Express Delivery (1 Day Only)</option>
                 </select>
               </div>
 
@@ -265,6 +268,7 @@
                 </div>
                 <span style="font-size:0.75rem; color:var(--text-muted);">Provide 20-30s of your singing voice</span>
               </div>
+              <!-- Commented out Brand Video Ad Starting Price
               <div class="pricing-row" style="flex-direction:column; align-items:flex-start; gap:4px;">
                 <div style="display:flex; justify-content:space-between; width:100%;">
                   <span class="label">Brand Video Ad (30s)</span>
@@ -272,6 +276,7 @@
                 </div>
                 <span style="font-size:0.75rem; color:var(--text-muted);">+₹4,000 for each additional 30 sec</span>
               </div>
+              -->
             </div>
           </div>
 
@@ -280,12 +285,8 @@
             <h3>⚡ Turnaround Time</h3>
             <div class="pricing-table">
               <div class="pricing-row">
-                <span class="label">Standard Delivery</span>
-                <span class="price">2–3 Days</span>
-              </div>
-              <div class="pricing-row">
-                <span class="label">Express Delivery (1 Day)</span>
-                <span class="price">+₹500</span>
+                <span class="label">Delivery Speed</span>
+                <span class="price">1 Day Only</span>
               </div>
               <div class="pricing-row">
                 <span class="label">Revisions Included</span>
@@ -307,7 +308,8 @@
             </details>
             <details class="faq-item">
               <summary>What format is the final delivery?</summary>
-              <p>Songs are delivered as high-quality MP3 and WAV files. Video ads are delivered in MP4 (HD/4K). All files are sent directly to your email.</p>
+              <!-- <p>Songs are delivered as high-quality MP3 and WAV files. Video ads are delivered in MP4 (HD/4K). All files are sent directly to your email.</p> -->
+              <p>Songs are delivered as high-quality MP3 and WAV files. Song visualizers are delivered in MP4 (HD/4K). All files are sent directly to your email.</p>
             </details>
             <details class="faq-item">
               <summary>Do you create multilingual content?</summary>
@@ -347,7 +349,7 @@
   <footer class="footer" role="contentinfo">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="/" class="nav-logo">
+        <a href="../index.html" class="nav-logo">
           <img src="../logo_hridaya.png" alt="" class="nav-logo-img" />
           <span class="nav-logo-text">Hridaya<span class="accent"> Harmonies</span></span>
         </a>
@@ -361,19 +363,21 @@
       <div class="footer-nav-group">
         <h4>Navigate</h4>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/services/">Services</a></li>
-          <li><a href="/portfolio/">Portfolio</a></li>
-          <li><a href="/devotional/">Devotional</a></li>
-          <li><a href="/order/">Order</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services/index.html">Services</a></li>
+          <li><a href="../portfolio/index.html">Portfolio</a></li>
+          <li><a href="../devotional/index.html">Devotional</a></li>
+          <li><a href="../order/index.html">Order</a></li>
         </ul>
       </div>
       <div class="footer-nav-group">
         <h4>Services</h4>
         <ul>
-          <li><a href="/services/#personal">Personalized Songs</a></li>
-          <li><a href="/services/#ads">AI Video Ads</a></li>
-          <li><a href="/devotional/">Devotional Music</a></li>
+          <li><a href="../services/index.html#personal">Personalized Songs</a></li>
+          <!-- Commented out Brand Ads Link
+          <li><a href="../services/index.html#ads">AI Video Ads</a></li>
+          -->
+          <li><a href="../devotional/index.html">Devotional Music</a></li>
         </ul>
       </div>
       <div class="footer-nav-group">
