@@ -158,7 +158,13 @@ if (orderForm) {
     const customerName  = (orderForm.querySelector('#fullName')?.value || '').trim();
     const customerPhone = (orderForm.querySelector('#phone')?.value   || '').trim();
     if (customerPhone) {
-      const cleanPhone = customerPhone.replace(/[^\d+]/g, '');
+      let cleanPhone = customerPhone.replace(/[^\d]/g, '');
+      if (cleanPhone.length === 11 && cleanPhone.startsWith('0')) {
+        cleanPhone = cleanPhone.substring(1);
+      }
+      if (cleanPhone.length === 10) {
+        cleanPhone = '91' + cleanPhone;
+      }
       const firstName  = customerName.split(' ')[0] || 'there';
       const greeting   = encodeURIComponent(
         `Hi ${firstName}! 🎵 We have received your order at Hridaya Harmonies. ` +
@@ -214,7 +220,13 @@ if (quickConnectForm) {
     const customerPhone = (quickConnectForm.querySelector('#qcPhone')?.value || '').trim();
     
     if (customerPhone) {
-      const cleanPhone = customerPhone.replace(/[^\d+]/g, '');
+      let cleanPhone = customerPhone.replace(/[^\d]/g, '');
+      if (cleanPhone.length === 11 && cleanPhone.startsWith('0')) {
+        cleanPhone = cleanPhone.substring(1);
+      }
+      if (cleanPhone.length === 10) {
+        cleanPhone = '91' + cleanPhone;
+      }
       const firstName  = customerName.split(' ')[0] || 'there';
       const greeting   = encodeURIComponent(
         `Hi ${firstName}! 🎵 Thank you for reaching out via our Hridaya Harmonies Quick Connect. ` +
