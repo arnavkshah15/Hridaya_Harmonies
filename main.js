@@ -4,6 +4,36 @@
 
 'use strict';
 
+/* ── PRETTY URLS & FILE SYSTEM COMPATIBILITY ────── */
+// If deployed (http/https), dynamically strip 'index.html' from URLs and links
+// so the address bar and status bars look clean (pretty URLs).
+// If opened locally (file://), keep exact index.html links so navigation works.
+if (window.location.protocol !== 'file:') {
+  // Clean address bar if page was loaded with index.html in the URL
+  if (window.location.pathname.endsWith('index.html')) {
+    const cleanPath = window.location.pathname.replace(/index\.html$/, '');
+    window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+  }
+
+  // Rewrite page link hrefs to pretty URLs on load
+  const cleanLinks = () => {
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href.includes('index.html')) {
+        let cleanHref = href.replace(/index\.html$/, '');
+        if (cleanHref === '') cleanHref = './';
+        link.setAttribute('href', cleanHref);
+      }
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', cleanLinks);
+  } else {
+    cleanLinks();
+  }
+}
+
 /* ── NAVBAR SCROLL BEHAVIOR ─────────────────────── */
 const navbar = document.getElementById('navbar');
 const navToggle = document.getElementById('navToggle');
@@ -163,6 +193,83 @@ if (orderForm) {
       submitBtn.classList.remove('loading');
     }
   });
+}
+
+/* ── QUICK CONNECT FORM LOGIC ────────────────────── */
+const quickConnectForm = document.getElementById('quickConnectForm');
+const qcAlert = document.getElementById('qcAlert');
+const qcSubmitBtn = document.getElementById('qcSubmitBtn');
+
+if (quickConnectForm) {
+  quickConnectForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!validateQCForm()) return;
+
+    qcSubmitBtn.classList.add('loading');
+    hideQCAlert();
+
+    const formData = new FormData(quickConnectForm);
+
+    const customerName  = (quickConnectForm.querySelector('#qcName')?.value || '').trim();
+    const customerPhone = (quickConnectForm.querySelector('#qcPhone')?.value || '').trim();
+    
+    if (customerPhone) {
+      const cleanPhone = customerPhone.replace(/[^\d+]/g, '');
+      const firstName  = customerName.split(' ')[0] || 'there';
+      const greeting   = encodeURIComponent(
+        `Hi ${firstName}! 🎵 Thank you for reaching out via our Hridaya Harmonies Quick Connect. ` +
+        `How can we help you with your custom song requirements today? 🙏`
+      );
+      const waLink = `https://wa.me/${cleanPhone}?text=${greeting}`;
+      
+      // WhatsApp clickable link for the lead email
+      formData.append('whatsapp_greeting_link', waLink);
+    }
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        showQCAlert('success', '✓ Request sent! We will connect with you on WhatsApp shortly.');
+        quickConnectForm.reset();
+      } else {
+        showQCAlert('error', '✗ Something went wrong. Please try again.');
+      }
+    } catch {
+      showQCAlert('error', '✗ Network error. Please check your connection.');
+    } finally {
+      qcSubmitBtn.classList.remove('loading');
+    }
+  });
+}
+
+function validateQCForm() {
+  const requiredFields = quickConnectForm.querySelectorAll('[required]');
+  let valid = true;
+  requiredFields.forEach(field => {
+    field.style.borderColor = '';
+    if (!field.value.trim()) {
+      field.style.borderColor = 'rgba(255,80,80,0.6)';
+      if (valid) field.focus();
+      valid = false;
+    }
+  });
+  if (!valid) showQCAlert('error', '✗ Please fill in all required fields.');
+  return valid;
+}
+
+function showQCAlert(type, msg) {
+  if (!qcAlert) return;
+  qcAlert.className = `form-alert ${type} show`;
+  qcAlert.querySelector('span').textContent = msg;
+}
+function hideQCAlert() {
+  if (!qcAlert) return;
+  qcAlert.className = 'form-alert';
 }
 
 function validateForm() {
