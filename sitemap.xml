@@ -30,4 +30,25 @@
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <!-- Occasion SEO pages -->
+  <url>
+    <loc>https://hridayaharmonies.in/occasions/personalized-birthday-song/</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hridayaharmonies.in/occasions/custom-anniversary-song/</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hridayaharmonies.in/occasions/custom-wedding-song/</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hridayaharmonies.in/occasions/gift-for-mom-dad/</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>

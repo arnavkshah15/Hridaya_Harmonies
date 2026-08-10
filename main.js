@@ -101,7 +101,7 @@ if (counters.length) {
 
 /* ── SCROLL REVEAL ───────────────────────────────── */
 const revealEls = document.querySelectorAll(
-  '.service-card, .process-step, .testimonial-card, .portfolio-item, .reel-card, .youtube-card, .sidebar-card, .service-detail'
+  '.service-card, .process-step, .testimonial-card, .portfolio-item, .reel-card, .youtube-card, .sidebar-card, .service-detail, .sample-card, .occasion-nav-card'
 );
 if (revealEls.length) {
   revealEls.forEach(el => el.classList.add('fade-in-up'));
@@ -126,6 +126,19 @@ const formAlert = document.getElementById('formAlert');
 const submitBtn = document.getElementById('submitBtn');
 
 if (orderForm) {
+  // Prefill service type from ?service= query param (occasion pages & CTAs)
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const serviceParam = params.get('service');
+    const serviceSelect = document.getElementById('serviceType');
+    if (serviceParam && serviceSelect) {
+      const option = Array.from(serviceSelect.options).find(o => o.value === serviceParam);
+      if (option) {
+        serviceSelect.value = serviceParam;
+      }
+    }
+  } catch (_) { /* ignore */ }
+
   // Char counter
   const msgField = document.getElementById('message');
   const charCount = document.getElementById('charCount');

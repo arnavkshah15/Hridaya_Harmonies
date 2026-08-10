@@ -1138,6 +1138,68 @@ input, select, textarea {
 }
 .sidebar-card h3 { font-family: 'Montserrat', sans-serif; font-size: 1.05rem; font-weight: 700; margin-bottom: var(--space-4); }
 .pricing-table { display: flex; flex-direction: column; gap: var(--space-3); }
+.price-offer-badge {
+  font-size: 0.68rem;
+  background: rgba(255, 80, 80, 0.12);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 80, 80, 0.35);
+  border-radius: 100px;
+  padding: 2px 8px;
+  font-weight: 700;
+  margin-left: 8px;
+  vertical-align: middle;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.price-offer-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: -4px 0 var(--space-4);
+  line-height: 1.4;
+}
+.price-was {
+  text-decoration: line-through;
+  opacity: 0.5;
+  font-size: 0.82em;
+  margin-right: 6px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.price-now {
+  font-weight: 800;
+  color: var(--electric-blue);
+}
+.price-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.discount-chip {
+  font-size: 0.65rem;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ff6b6b;
+  background: rgba(255, 80, 80, 0.1);
+  border: 1px solid rgba(255, 80, 80, 0.28);
+  border-radius: 100px;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+.occasion-price-card .discount-chip {
+  display: inline-block;
+  margin-bottom: var(--space-3);
+}
+.occasion-price-card .price-save {
+  font-size: 0.85rem;
+  color: #ff6b6b;
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
 .pricing-row {
   display: flex;
   justify-content: space-between;
@@ -1732,4 +1794,505 @@ select optgroup {
 select option {
   background-color: var(--bg-deep);
   color: var(--text-primary);
+}
+
+/* ── CONVERSION: TRUST STRIP ───────────────────────────── */
+.trust-strip {
+  background: var(--bg-card);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: var(--space-4) 0;
+}
+.trust-strip-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4) var(--space-8);
+}
+.trust-strip-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+.trust-strip-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--electric-blue);
+  flex-shrink: 0;
+}
+.trust-strip-item strong { color: var(--text-primary); }
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+.star-rating span { font-size: 0.9rem; }
+.hero-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  flex-wrap: wrap;
+}
+.hero-rating .rating-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+.hero-rating .rating-text strong { color: var(--text-primary); }
+
+/* ── CONVERSION: SAMPLE CLIPS WITH LYRICS ──────────────── */
+.samples-section { background: var(--bg-dark); }
+.samples-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+@media (max-width: 960px) { .samples-grid { grid-template-columns: 1fr; } }
+.sample-card {
+  background: var(--grad-card);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--t-med) var(--ease);
+}
+.sample-card:hover {
+  border-color: rgba(0,212,255,0.25);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-blue);
+}
+.sample-card-media {
+  position: relative;
+  aspect-ratio: 9/16;
+  max-height: 380px;
+  background: #000;
+  overflow: hidden;
+}
+.sample-card-media .yt-thumb,
+.sample-card-media .yt-thumb-placeholder {
+  width: 100%;
+  height: 100%;
+}
+.sample-card-media .yt-thumb { aspect-ratio: unset; height: 100%; }
+.sample-duration {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  background: rgba(0,0,0,0.75);
+  color: var(--text-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.15);
+  pointer-events: none;
+}
+.sample-card-body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+.sample-card-body .video-tag { align-self: flex-start; }
+.sample-card-body h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.sample-card-body > p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+.sample-lyrics {
+  background: rgba(0,212,255,0.05);
+  border: 1px solid rgba(0,212,255,0.15);
+  border-left: 3px solid var(--electric-blue);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: var(--space-3) var(--space-4);
+  margin-top: auto;
+}
+.sample-lyrics-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--electric-blue);
+  margin-bottom: var(--space-2);
+  font-family: 'Montserrat', sans-serif;
+}
+.sample-lyrics p {
+  font-style: italic;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin: 0;
+}
+.sample-lyrics-note {
+  font-style: normal !important;
+  font-size: 0.75rem !important;
+  color: var(--text-muted) !important;
+  margin-top: var(--space-2) !important;
+}
+
+/* ── CONVERSION: GUARANTEE BANNER ──────────────────────── */
+.guarantee-banner {
+  background: linear-gradient(135deg, rgba(0,212,255,0.08) 0%, rgba(0,85,255,0.06) 100%);
+  border: 1px solid rgba(0,212,255,0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-8);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+.guarantee-banner-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--blue-glow);
+  border: 1px solid rgba(0,212,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.guarantee-banner-icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--electric-blue);
+}
+.guarantee-banner h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: var(--space-2);
+}
+.guarantee-banner p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  max-width: 640px;
+}
+.guarantee-banner-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+.guarantee-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.04em;
+  padding: 6px 12px;
+  border-radius: 100px;
+  background: rgba(0,212,255,0.1);
+  border: 1px solid rgba(0,212,255,0.25);
+  color: var(--electric-blue);
+}
+
+/* ── CONVERSION: FREE PREVIEW CTA ──────────────────────── */
+.preview-cta {
+  background: var(--bg-card);
+  border: 1px dashed rgba(37, 211, 102, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+.preview-cta-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #25D366;
+  background: rgba(37, 211, 102, 0.1);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  border-radius: 100px;
+  padding: 4px 12px;
+  margin-bottom: var(--space-3);
+  font-family: 'Montserrat', sans-serif;
+}
+.preview-cta h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 800;
+  margin-bottom: var(--space-3);
+  line-height: 1.25;
+}
+.preview-cta p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  max-width: 520px;
+}
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #fff !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.95rem 1.5rem;
+  border-radius: 100px;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+  transition: all var(--t-fast) var(--ease);
+  white-space: nowrap;
+}
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+}
+.btn-whatsapp svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+/* ── CONVERSION: TESTIMONIAL STARS ─────────────────────── */
+.testimonial-stars {
+  color: var(--gold);
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  margin-bottom: var(--space-3);
+}
+.social-proof-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4) var(--space-8);
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.social-proof-stat {
+  text-align: center;
+}
+.social-proof-stat .num {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--electric-blue);
+  line-height: 1.2;
+}
+.social-proof-stat .lbl {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ── OCCASION PAGES ────────────────────────────────────── */
+.occasion-hero {
+  padding: calc(80px + var(--space-10)) 0 var(--space-10);
+  background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-deep) 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.occasion-hero .breadcrumb {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+.occasion-hero .breadcrumb a { color: var(--text-secondary); }
+.occasion-hero .breadcrumb a:hover { color: var(--electric-blue); }
+.occasion-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: var(--space-4);
+  max-width: 800px;
+}
+.occasion-hero .lead {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 640px;
+  margin-bottom: var(--space-6);
+}
+.occasion-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+.occasion-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+.occasion-meta-item {
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.occasion-meta-item strong {
+  display: block;
+  color: var(--text-primary);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+.occasion-content { padding: var(--space-10) 0; }
+.occasion-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+@media (max-width: 900px) { .occasion-grid { grid-template-columns: 1fr; } }
+.occasion-prose h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: var(--space-6) 0 var(--space-3);
+}
+.occasion-prose h2:first-child { margin-top: 0; }
+.occasion-prose p {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: var(--space-4);
+}
+.occasion-prose ul {
+  margin: 0 0 var(--space-5);
+  padding-left: 0;
+}
+.occasion-prose li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+  line-height: 1.6;
+}
+.occasion-prose li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--electric-blue);
+  font-weight: 700;
+}
+.occasion-sidebar {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+@media (max-width: 900px) { .occasion-sidebar { position: static; } }
+.occasion-price-card {
+  background: var(--grad-card);
+  border: 1px solid rgba(0,212,255,0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+.occasion-price-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--electric-blue);
+  margin-bottom: var(--space-3);
+}
+.occasion-price-card .price-main {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+.occasion-price-card .price-was {
+  text-decoration: line-through;
+  opacity: 0.5;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-right: 8px;
+}
+.occasion-price-card .price-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-5);
+}
+.occasion-price-card .btn { width: 100%; justify-content: center; margin-bottom: var(--space-3); }
+.occasions-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+@media (max-width: 900px) { .occasions-nav-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .occasions-nav-grid { grid-template-columns: 1fr; } }
+.occasion-nav-card {
+  background: var(--grad-card);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  transition: all var(--t-med) var(--ease);
+  display: block;
+}
+.occasion-nav-card:hover {
+  border-color: rgba(0,212,255,0.3);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-blue);
+}
+.occasion-nav-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+}
+.occasion-nav-card p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.order-preview-note {
+  background: rgba(37, 211, 102, 0.06);
+  border: 1px solid rgba(37, 211, 102, 0.25);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-5);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+.order-preview-note strong { color: #25D366; }
+.order-guarantee-box {
+  background: rgba(0,212,255,0.06);
+  border: 1px solid rgba(0,212,255,0.2);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-top: var(--space-4);
+}
+.order-guarantee-box h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+}
+.order-guarantee-box p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
 }

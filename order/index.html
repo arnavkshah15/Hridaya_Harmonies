@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- <title>Order Custom Music & Brand Ads | Hridaya Harmonies</title> -->
-  <title>Order Custom Music | Hridaya Harmonies</title>
-  <!-- <meta name="description" content="Order custom AI-generated music or high-impact brand video ads from Hridaya Harmonies. Share your vision and we'll craft something unforgettable." /> -->
-  <meta name="description" content="Order custom AI-generated music for special occasions from Hridaya Harmonies. Share your vision and we'll craft something unforgettable with 1-day express delivery." />
+  <title>Order a Personalized Song | Free Lyric Preview · Hridaya Harmonies</title>
+  <meta name="description" content="Order a personalized birthday, anniversary, wedding or parent song. Free lyric preview, transparent pricing from ₹999 (limited offer), 1-day delivery, 2 free revisions." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../logo_hridaya.png" />
@@ -57,15 +56,19 @@
         <!-- FORM -->
         <div class="order-form-wrap" id="orderFormWrap">
           <h2 class="order-form-title">Tell Us Your Story</h2>
-          <p class="order-form-subtitle">Complete the form below. We'll review your brief and respond within 24 hours.</p>
+          <p class="order-form-subtitle">Complete the form below. We'll review your brief and respond within 24 hours. Ask for a free lyric preview anytime.</p>
+
+          <div class="order-preview-note">
+            <strong>Free lyric preview available</strong> — Share the occasion and a few details. We’ll sketch personalized lyric lines so you can approve the direction before full production. Reduces risk; no obligation to proceed if it’s not a fit.
+          </div>
 
           <!-- Quick Connect WhatsApp Form -->
-          <div class="quick-connect-wrap" style="background: rgba(37, 211, 102, 0.05); border: 1px dashed rgba(37, 211, 102, 0.3); border-radius: var(--radius-md); padding: var(--space-5); margin-bottom: var(--space-6); position: relative; overflow: hidden;">
+          <div class="quick-connect-wrap" id="quickConnect" style="background: rgba(37, 211, 102, 0.05); border: 1px dashed rgba(37, 211, 102, 0.3); border-radius: var(--radius-md); padding: var(--space-5); margin-bottom: var(--space-6); position: relative; overflow: hidden;">
             <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-3);">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px; color: #25D366;"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-              <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 800; color: #e8eaf0; margin: 0;">Quick Connect via WhatsApp</h3>
+              <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 800; color: #e8eaf0; margin: 0;">Quick Connect · Free Lyric Preview</h3>
             </div>
-            <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: var(--space-4); line-height: 1.5;">Short on time? Share your name and WhatsApp number. We'll reach out to start discussing your custom song instantly!</p>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: var(--space-4); line-height: 1.5;">Short on time? Share your name and WhatsApp number. We'll reach out to discuss your song — or send a free lyric direction first.</p>
             <form id="quickConnectForm" novalidate>
               <!-- Web3Forms configuration -->
               <input type="hidden" name="access_key" value="9c9d89fb-f08c-496b-a656-edf32edbd687" />
@@ -294,44 +297,48 @@
 
           <!-- Pricing Overview -->
           <div class="sidebar-card">
-            <h3>💰 Starting Prices <span style="font-size: 0.68rem; background: rgba(0, 212, 255, 0.12); color: var(--electric-blue); border: 1px solid rgba(0, 212, 255, 0.25); border-radius: 100px; padding: 2px 8px; font-weight: 700; margin-left: 8px; vertical-align: middle; letter-spacing: 0.05em; text-transform: uppercase;">Limited Offer</span></h3>
+            <h3>💰 Starting Prices <span class="price-offer-badge">Limited Offer</span></h3>
+            <p class="price-offer-sub">Save up to 50% · free lyric preview included · prices shown after discount</p>
             <div class="pricing-table">
-              <div class="pricing-row" style="flex-direction:column; align-items:flex-start; gap:4px;">
-                <div style="display:flex; justify-content:space-between; width:100%;">
+              <div class="pricing-row" style="flex-direction:column; align-items:flex-start; gap:6px;">
+                <div style="display:flex; justify-content:space-between; width:100%; align-items:center; gap:8px;">
                   <span class="label">Personalized Song</span>
                   <span class="price">
-                    <span style="text-decoration: line-through; opacity: 0.5; font-size: 0.82em; margin-right: 6px; font-weight: 500; color: var(--text-secondary);">₹1,500</span>
-                    ₹500
+                    <span class="price-was">₹1,999</span>
+                    <span class="price-now">₹999</span>
                   </span>
                 </div>
-                <span style="font-size:0.75rem; color:var(--text-muted);">(Birthday, Anniversary, etc)</span>
+                <div class="price-meta-row">
+                  <span style="font-size:0.75rem; color:var(--text-muted);">Birthday, Anniversary, gift for mom/dad…</span>
+                  <span class="discount-chip">50% OFF · Save ₹1,000</span>
+                </div>
               </div>
-              <div class="pricing-row">
-                <span class="label">Wedding Song</span>
-                <span class="price">
-                  <span style="text-decoration: line-through; opacity: 0.5; font-size: 0.82em; margin-right: 6px; font-weight: 500; color: var(--text-secondary);">₹2,500</span>
-                  ₹1,000
-                </span>
+              <div class="pricing-row" style="flex-direction:column; align-items:flex-start; gap:6px;">
+                <div style="display:flex; justify-content:space-between; width:100%; align-items:center; gap:8px;">
+                  <span class="label">Wedding / Roka Song</span>
+                  <span class="price">
+                    <span class="price-was">₹3,499</span>
+                    <span class="price-now">₹1,999</span>
+                  </span>
+                </div>
+                <div class="price-meta-row">
+                  <span style="font-size:0.75rem; color:var(--text-muted);">Sangeet, first dance, engagement</span>
+                  <span class="discount-chip">Save ₹1,500</span>
+                </div>
               </div>
-              <div class="pricing-row" style="flex-direction:column; align-items:flex-start; gap:4px;">
-                <div style="display:flex; justify-content:space-between; width:100%;">
+              <div class="pricing-row" style="flex-direction:column; align-items:flex-start; gap:6px;">
+                <div style="display:flex; justify-content:space-between; width:100%; align-items:center; gap:8px;">
                   <span class="label">Your Voice Song</span>
                   <span class="price">
-                    <span style="text-decoration: line-through; opacity: 0.5; font-size: 0.82em; margin-right: 6px; font-weight: 500; color: var(--text-secondary);">₹5,000</span>
-                    ₹3,000
+                    <span class="price-was">₹5,999</span>
+                    <span class="price-now">₹3,999</span>
                   </span>
                 </div>
-                <span style="font-size:0.75rem; color:var(--text-muted);">Provide 20-30s of your singing voice</span>
-              </div>
-              <!-- Commented out Brand Video Ad Starting Price
-              <div class="pricing-row" style="flex-direction:column; align-items:flex-start; gap:4px;">
-                <div style="display:flex; justify-content:space-between; width:100%;">
-                  <span class="label">Brand Video Ad (30s)</span>
-                  <span class="price">₹5000</span>
+                <div class="price-meta-row">
+                  <span style="font-size:0.75rem; color:var(--text-muted);">Provide 20–30s of your singing voice</span>
+                  <span class="discount-chip">Save ₹2,000</span>
                 </div>
-                <span style="font-size:0.75rem; color:var(--text-muted);">+₹4,000 for each additional 30 sec</span>
               </div>
-              -->
             </div>
           </div>
 
@@ -359,7 +366,11 @@
             </details>
             <details class="faq-item">
               <summary>Can I request revisions?</summary>
-              <p>Absolutely. Every order includes 2 revision rounds to ensure you're completely in love with the final piece. Additional revisions can be arranged.</p>
+              <p>Absolutely. Every order includes 2 free revision rounds (our love-it guarantee) so you're completely happy with the final piece. Additional revisions can be arranged.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Do you offer a free sample or lyric preview?</summary>
+              <p>Yes. Ask for a free lyric preview when you order or via Quick Connect. We’ll sketch personalized lines so you can approve the direction before full production — it reduces purchase anxiety and is included at no extra cost.</p>
             </details>
             <details class="faq-item">
               <summary>What format is the final delivery?</summary>
@@ -377,20 +388,24 @@
             <div class="trust-badges">
               <div class="trust-badge">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                <span>200+ satisfied clients</span>
+                <span>200+ songs · 4.9★ average</span>
               </div>
               <div class="trust-badge">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                <span>100% secure &amp; confidential</span>
+                <span>Love-it guarantee · 2 free revisions</span>
               </div>
               <div class="trust-badge">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>24-hour response guarantee</span>
+                <span>24-hour response · 1-day delivery</span>
               </div>
               <div class="trust-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                <span>Crafted with heart, powered by AI</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                <span>Free lyric preview before finalize</span>
               </div>
+            </div>
+            <div class="order-guarantee-box">
+              <h4>Love-It Guarantee</h4>
+              <p>We include 2 free revision rounds so the song feels like yours. Request a free lyric preview with your order — approve the direction before full production.</p>
             </div>
           </div>
 
